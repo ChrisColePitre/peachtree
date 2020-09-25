@@ -1,24 +1,23 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import headerPic from "./peachTreeGallHeader.png";
 
+const handleClick = () => {
+  alert("HEY");
+};
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div style={{ width: "200px", heigh: "100px", alignContent: "center" }}>
+      <img src={headerPic} alt={"Oopsies..."} style={{ width: "200px" }} />
+      <button
+        onClick={handleClick}
+        style={{
+          alignContent: "center",
+          backgroundColor: "grey",
+          fontSize: 10,
+        }}
+      >
+        Click To Give Me Your Hair
+      </button>
     </div>
   );
 }

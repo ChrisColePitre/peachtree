@@ -1,24 +1,20 @@
 import React from "react";
 import headerPic from "./peachTreeGallHeader.png";
+import * as S from "./StyledApp";
 
 const handleClick = () => {
-  alert("HEY");
+  alert("*Fart Noise*");
 };
 function App() {
   return (
-    <div style={{ width: "200px", heigh: "100px", alignContent: "center" }}>
-      <img src={headerPic} alt={"Oopsies..."} style={{ width: "200px" }} />
-      <button
-        onClick={handleClick}
-        style={{
-          alignContent: "center",
-          backgroundColor: "grey",
-          fontSize: 10,
-        }}
-      >
-        Click To Give Me Your Hair
-      </button>
-    </div>
+    <>
+      <S.Header>
+        <S.Logo src={headerPic} alt={"Oopsies..."} />
+      </S.Header>
+      <S.Card>
+        <S.Button onClick={handleClick}>Pull My Finger</S.Button>
+      </S.Card>
+    </>
   );
 }
 

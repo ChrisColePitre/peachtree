@@ -11,6 +11,9 @@
 # production
 /build
 
+# In Progress
+/src/features/photos
+
 # misc
 .DS_Store
 .env.local

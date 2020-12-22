@@ -22,4 +22,10 @@ export const Button = styled.button`
   border: solid;
   border-radius: 3px;
   font-size: 10;
+  background-color: ${(props) => (props.primary ? "blue" : "white")};
+`;
+
+export const Image = styled.img`
+  width: 400px;
+  height: 300px;
 `;

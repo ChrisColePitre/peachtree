@@ -22,7 +22,7 @@ const initialState = {
   sortDir: '',
   sortCol: 'age',
   secSortCol: '',
-  searchTerms: ['aa','bb']//array of strings
+  searchTerms: []//array of strings
 }
 
 

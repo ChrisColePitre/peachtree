@@ -1,11 +1,11 @@
 import React from "react";
 import headerPic from "../peachTreeGallHeader.png";
 import * as S from "../StyledApp";
-import Photo from "../features/photos/photo";
+// import Photo from "../features/photos/photo";
 import ItemsList from "../features/items/itemList"
-const handleClick = () => {
-  alert("*Fart Noise*");
-};
+// const handleClick = () => {
+//   alert("*Fart Noise*");
+// };
 function App() {
   return (
     <>
@@ -14,9 +14,9 @@ function App() {
       </S.Header>
 
       <S.Card>
-        <S.Button onClick={handleClick} primary>
+        {/* <S.Button onClick={handleClick} primary>
           Pull My Finger
-        </S.Button>
+        </S.Button> */}
         <ItemsList />
       </S.Card>
       {/* <Photo /> */}

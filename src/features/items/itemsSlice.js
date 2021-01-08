@@ -1,4 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
+import axios from "axios";
 
 // let nextItemID = 0;
 
@@ -22,7 +23,8 @@ const initialState = {
   sortDir: '',
   sortCol: 'age',
   secSortCol: '',
-  searchTerms: []//array of strings
+  searchTerms: [],//array of strings
+  data: []
 }
 
 
@@ -37,10 +39,36 @@ const itemsSlice = createSlice({
       // else if(sortDir==='desc')return state.sortDir=sortDir
       
     },
+    getData: {
+      // reducer(state,action){
+      // //  const data = action.payload;
+      // //  console.log(data)
+      //   console.log(action.payload)
+      //   return state = {...state, data: action.payload}
+      // },
+      async prepare(text){
+        const result = await axios.get("https://jsonplaceholder.typicode.com/posts")
+        console.log("FULL RESULT:  " + result)
+        console.log("DATA TYPE OF TARGET PAYLOAD: " + result.data.type)
+        if(!result){
+          return {payload: null }
+        } else {
+          let data = [];
+          data = [...result.data]
+          console.log(data)
+          return  { payload: {text: text, data: data}}
+        }
+      },
+      reducer(state, action){
+        const data = action.payload; 
+        console.log(data)
+        return state = {...state, data: data} 
+      }
+    }
   },
 }
 );
 
-export const { clickReducer } = itemsSlice.actions;
+export const { clickReducer, getData } = itemsSlice.actions;
 
 export default itemsSlice.reducer;

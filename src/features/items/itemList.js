@@ -1,10 +1,10 @@
 import React from 'react'
 import {connect} from 'react-redux'
 import { createSelector } from '@reduxjs/toolkit'
-import {clickReducer} from './itemsSlice'
+import {clickReducer, getData} from './itemsSlice'
 
 
-const ItemList = ({items, clickReducer})=> (
+const ItemList = ({items, data, clickReducer, getData})=> (
     <div style={{height:400, width: '100%'}}>
     {items.map(item=>{
                 let id = item.id
@@ -16,14 +16,24 @@ const ItemList = ({items, clickReducer})=> (
        </div>)
     })    
     }
+    {!data ? null : data.map(d=>{
+        let userId= d.userId
+        let id = d.id
+        let title = d.title
+        return(<div>
+            <p>{userId+ ' ' + id + ' ' + title}</p>
+        </div>)
+    })}
     {/* <DataGrid row={data} columns={columns} pageSize={10}/>*/}
         <button onClick={()=>clickReducer({sortDir: 'asc'})}>ASCEND</button> 
         <button onClick={()=>clickReducer({sortDir: 'desc'})}>DESCEND</button> 
+        <button onClick={()=>getData()}>DATA</button> 
     </div>
     )
 
 
 const selectList = (state)=> [...state.items.list];
+const selectData = (state) => state.items.data;
 const selectDirection = (state)=> state.items.sortDir;
 const selectSortColumn = (state) => state.items.sortCol;
 const selectSearchTerms = (state) => [...state.items.searchTerms];
@@ -59,9 +69,10 @@ const selectSearchedData = createSelector([selectSortedData, selectSearchTerms],
 
 const mapStateToProps =(state) => ({
     items: selectSearchedData(state),
+    data: selectData(state),
 })
 
-const mapDispatchToProps = {clickReducer};
+const mapDispatchToProps = {clickReducer, getData};
 
 export default connect(mapStateToProps, mapDispatchToProps)(ItemList);
 

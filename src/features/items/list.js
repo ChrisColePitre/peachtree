@@ -2,25 +2,41 @@ import React from 'react'
 import {connect} from 'react-redux'
 import { createSelector } from '@reduxjs/toolkit'
 import {clickReducer, getData} from './slice'
+import * as S from '../../components/styling'
 
 
 const ItemList = ({items, data, clickReducer, getData})=> (
-    <div style={{height:400, width: '100%'}}>
-    {items.map(item=>{
-                let id = item.id
-                let name = item.name
-                let age = item.age.toString()
-       return(
-       <div>
-             <p>{id+ '  '+ name +'  ' +age}</p>
-       </div>)
-    })    
-    }
-   
-        <button onClick={()=>clickReducer({sortDir: 'asc'})}>ASCEND</button> 
-        <button onClick={()=>clickReducer({sortDir: 'desc'})}>DESCEND</button> 
-        <button onClick={()=>getData('a')}>DATA</button> 
-    </div>
+    <S.Card>
+        <S.CardTitle>My Data Sorting Example</S.CardTitle>
+        <S.CardContentBox>
+            <S.Table>
+                {items.map(item=>{
+                            let id = item.id
+                            let name = item.name
+                            let age = item.age.toString()
+                return(
+                    <S.Row>
+                <S.FauxDataTableCell>
+                        <p>{id}</p>
+                </S.FauxDataTableCell>
+                <S.FauxDataTableCell>
+                        <p>{name}</p>
+                </S.FauxDataTableCell>
+                <S.FauxDataTableCell>
+                        <p>{age}</p>
+                </S.FauxDataTableCell>
+                </S.Row>)
+                })    
+                }
+            </S.Table>
+        </S.CardContentBox>
+        <S.CardActionBox>
+            <S.Button onClick={()=>clickReducer({sortDir: 'asc'})}>ASCEND</S.Button> 
+            <S.Button onClick={()=>clickReducer({sortDir: 'desc'})}>DESCEND</S.Button> 
+            <S.Button onClick={()=>clickReducer({sortDir: 'res'})}>RESET</S.Button> 
+            <S.Button onClick={()=>getData('')}>DATA</S.Button> 
+        </S.CardActionBox>
+    </S.Card>
     )
 
 
@@ -37,6 +53,8 @@ const selectSortedData = createSelector([selectList,selectDirection, selectSortC
                 // }else return list.sort((a,b)=> ())
             case 'asc': 
                 return list.sort((a,b)=> (a[sortCol]>b[sortCol]) ? 1 : -1);
+            case 'res':
+                return list;
             default:
                 return list;
         }

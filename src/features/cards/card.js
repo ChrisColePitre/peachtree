@@ -1,6 +1,7 @@
 //The card that takes in object and renders UI components with it
 import React from 'react'
 import * as S from '../../components/styling'
+import {connect} from 'react-redux'
 import { getData} from './slice'
 
 const Card = ({props}) => {//need to wire in props into thunk here (is that what parenthesis in arrow function is called?)
@@ -17,6 +18,13 @@ const Card = ({props}) => {//need to wire in props into thunk here (is that what
       </S.Card>
     )
 }
-const mapDispatchToProps = { getData};
+const mapDispatch = { getData};
 
-export default Card; 
+const mapState =(state) => ({
+  data: state.cards.data,
+  // data: selectData(state),
+})
+
+
+
+export default connect(mapState,mapDispatch)(Card); 

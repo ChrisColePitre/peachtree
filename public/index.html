@@ -7,8 +7,10 @@
     <meta name="theme-color" content="#000000" />
     <meta
       name="description"
-      content="Web site created using create-react-app"
+      content="Web site created using create-react-app and Dreamweaver"
     />
+    <link href="BlogPostAssets/styles/blogPostStyle.css" rel="stylesheet" type="text/css">
+
     <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
     <!--
       manifest.json provides metadata used when your web app is installed on a
@@ -24,11 +26,82 @@
       work correctly both with client-side routing and a non-root public URL.
       Learn how to configure a non-root public URL by running `npm run build`.
     -->
-    <title>React App</title>
+    <title>Pitre.dev</title>
   </head>
   <body>
     <noscript>You need to enable JavaScript to run this app.</noscript>
-    <div id="root"></div>
+    <div id="mainwrapper">
+      <header> 
+        <!--**************************************************************************
+        Header starts here. It contains Logo and 3 navigation links. 
+        ****************************************************************************-->
+        <div id="logo">
+          <!-- <img src="logoImage.png" alt="sample logo"> -->
+          <!-- Company Logo text -->
+          Pitre.dev&nbsp;</div>
+    <!--    <nav> <a href="#" title="Link">Nav1</a> <a href="#" title="Link">Nav2</a><a href="#" title="Link">Nav3</a> </nav>-->
+      </header>
+      <div id="content">
+        <div class="notOnDesktop"> 
+          <!-- This search box is displayed only in mobile and tablet laouts and not in desktop layouts -->
+          <input type="text" placeholder="Search">
+        </div>
+        <section id="mainContent"> 
+          <!--************************************************************************
+        Main Blog content starts here
+        ****************************************************************************-->
+          <h1>
+            <!-- Blog title -->
+    Chris Cole Pitre&nbsp;</h1>
+          <h3>
+            <!-- Tagline -->
+            Web Developer - Entrepeneur - Adventurer&nbsp;</h3>
+          <div id="bannerImage"><img src="BlogPostAssets/images/arkansasLandscape.jpeg" alt=""/></div>
+          <p>Welcome to my site! This has been a long time coming, and there's still a lot more to go. I've got so much on my plate to learn to be able to enter the market for web development for small businesses that I've overlooked the need for a sufficient portfolio site for myself. Honestly the only need for a portfolio site up until this point was to showcase what kind of developer I am to potential employers, and I've been quite un-motivated to seek such a thing. At this very point in my existence I no longer think that this site is a window for potential employers, instead this is the next steps in the journey I began when I was 17. This window into my personal projects and other doings is for people to view me, not my working-productivity potential. </p>
+          <p> From the moment this site successfully goes live, I am no longer putting together projects that make me look hireable. I want to build a community around the skateboarders in my area, one that bands together to not only keep the parks clean but to actively work to maintain and improve upon what we have. I want to do the same community building for moutain bike trails, rock climbing location, apartment complexes, and anything else I have the capacity to work towards. The power of the internet is incredible at connecting humans, and I want to work to decentralize our attention from traditional electronic methods of gathering and sharing info such as on mainstream social media platforms. I love to work on bikes and I want to some day organize a community bike shop that restores and sells bikes in partnership with a non-profit in DC called Gearin' Up DC. Depending on the success of that I would try to do that in the future in KCMO when I move back. I have dreams of starting for-profit businesses as well, but those are plans I'm not so keen on publishing just yet. ;) </p>
+        
+          <aside id="authorInfo"> 
+            <!-- The author information is contained here -->
+            <h2>Chris Cole Pitre</h2>
+            <p>I am employed as a Software Engineer, but that's the least interesting thing about me. I'm an avid outdoorsman with a long list of places to explore, I love to go camping with good friends. I like to participate in action sports, mostly mountain biking and skateboarding but I'd never pass up a good opportunity to go skiing or rock climbing. I dabble as a musician, mostly ukulele and whistling for now but when finances and time are of no consequence I'll be diving into anything and everything.</p>
+          </aside>
+        </section>
+        <section id="sidebar"> 
+          <!--************************************************************************
+        Sidebar starts here. It contains a searchbox, sample ad image and 6 links
+        ****************************************************************************-->
+          <input type="text" placeholder="Search">
+          <div id="adimage"><img src="BlogPostAssets/images/portrait.jpeg" alt=""/></div>
+          <nav>
+            <ul>
+              <li><a href="#" title="Link">Put</a></li>
+              <li><a href="#" title="Link">Social</a></li>
+              <li><a href="#" title="Link">Media</a></li>
+              <li><a href="#" title="Link">Here!</a></li>
+              <li><a href="#" title="Link">Thx,</a></li>
+              <li><a href="#" title="Link">Chris</a></li>
+            </ul>
+          </nav>
+        </section>
+    <!--
+        <footer> 
+          ************************************************************************
+        Footer starts here
+        ****************************************************************************
+          <article>
+            <h3>Left Footer</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+          </article>
+          <article>
+            <h3>Right Footer</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+          </article>
+        </footer>
+    -->
+      </div>
+      <div id="footerbar"><!-- Small footerbar at the bottom --></div><!-- ADD SOCIAL MEDIA LINKS AND HOME LINK AT SOME POINT -->
+   
+    <div id="root"></div> 
     <!--
       This HTML file is a template.
       If you open it directly in the browser, you will see an empty page.
@@ -39,5 +112,6 @@
       To begin the development, run `npm start` or `yarn start`.
       To create a production bundle, use `npm run build` or `yarn build`.
     -->
+  </div>
   </body>
 </html>

@@ -1,13 +1,14 @@
 import React from 'react'
 import {connect} from 'react-redux'
 import { createSelector } from '@reduxjs/toolkit'
-import {clickReducer, getData} from './slice'
+import {clickReducer} from './slice'
 import * as S from '../../components/styling'
 
 
 const ItemList = ({items, data, clickReducer, getData})=> (
     <S.Card>
         <S.CardTitle>My Data Sorting Example</S.CardTitle>
+        <p>This example shows you a Redux resource in action! It uses specific features of redux-toolkit, RTK, to dynamically sort the data based on the button clicks. The potential use for this goes way beyond the crude table below, but again, gotta find the most cost effective hosting solutions.</p>
         <S.CardContentBox>
             <S.Table>
                 {items.map(item=>{
@@ -33,8 +34,7 @@ const ItemList = ({items, data, clickReducer, getData})=> (
         <S.CardActionBox>
             <S.Button onClick={()=>clickReducer({sortDir: 'asc'})}>ASCEND</S.Button> 
             <S.Button onClick={()=>clickReducer({sortDir: 'desc'})}>DESCEND</S.Button> 
-            <S.Button onClick={()=>clickReducer({sortDir: 'res'})}>RESET</S.Button> 
-            <S.Button onClick={()=>getData('')}>DATA</S.Button> 
+            <S.Button onClick={()=>clickReducer({sortDir: 'res'})}>RESET</S.Button>  
         </S.CardActionBox>
     </S.Card>
     )
@@ -82,7 +82,7 @@ const mapStateToProps =(state) => ({
     // data: selectData(state),
 })
 
-const mapDispatchToProps = {clickReducer, getData};
+const mapDispatchToProps = {clickReducer};
 
 export default connect(mapStateToProps, mapDispatchToProps)(ItemList);
 

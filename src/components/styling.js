@@ -4,8 +4,7 @@ export const App = styled.html`
     background-color: #c1e4e8;
     padding: 10px;
     margin: 0px;
-    border: solid;
-    border-color: red;
+   
     font-size: 8pt;
     align-items: center;
 `
@@ -41,13 +40,13 @@ export const FauxDataTableCell= styled.div`
     width: 30%;
     margin: auto;
     border: dashed;
-    border-color: red;
+    border-color: yellow;
     border-width: 1px;
     display: table-cell;
 `
 export const CardContentBox = styled.div`
     width: 80%;
-    border: dashed;
+    border: solid;
     border-width: 1px;
     margin: auto;
     text-align: center;

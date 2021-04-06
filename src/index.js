@@ -14,7 +14,7 @@ ReactDOM.render(
   <S.App>
     <React.StrictMode>
       <Provider store = {store}>
-          <S.Logo>Chris Cole Pitre</S.Logo>
+          <S.Logo>My React Examples</S.Logo>
           <App />
       </Provider>
       </React.StrictMode>

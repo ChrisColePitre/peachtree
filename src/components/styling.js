@@ -1,7 +1,7 @@
 import styled from 'styled-components'
 
 export const App = styled.html`
-    background-color: #c1e4e8;
+    background-color: #3fa375;
     padding: 10px;
     margin: 0px;
    

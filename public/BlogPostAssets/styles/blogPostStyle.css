@@ -1,7 +1,8 @@
 @charset "UTF-8";
+/* mySiteGreen 3fa375*/
 #mainwrapper header {
 	/*Header */
-	background-color: rgba(208,207,207,1.00);
+	background-color: #3fa375;
 	overflow: auto;
 	font-family: montserrat, sans-serif;
 	font-style: normal;
@@ -9,12 +10,17 @@
 }
 #mainwrapper header #logo {
 	/* Company Logo text */
-	width: 28%;
+	width: 69%;
+	float: right;
+	padding: 10px 0 0 0;
+	margin: 0;
+}
+#mainwrapper header #wordmarklogo {
+	/* Company Logo text */
 	float: left;
-	padding-left: 2%;
-	padding-top: 12px;
-	padding-bottom: 12px;
-	color: rgba(146,146,146,1.00);
+	padding: 0;
+	margin:  0;
+	
 }
 #mainwrapper header nav {
 	/*Nav bar containing links in header */
@@ -24,7 +30,7 @@
 	padding-right: 2%;
 	width: 68%;
 	float: left;
-	color: rgba(146,146,146,1.00);
+	color: #3fa375;
 }
 header nav a {
 	/* Links in header */
@@ -38,8 +44,8 @@ header nav a {
 	/*Captions ot Taglines */
 	font-family: source-sans-pro, sans-serif;
 	font-style: normal;
-	font-weight: 200;
-	color: rgba(146,146,146,1.00);
+	font-weight: 100;
+	color: black;
 }
 #content #mainContent #bannerImage {
 	/*Container for main banner image */
@@ -48,10 +54,9 @@ header nav a {
 }
 #content #mainContent p {
 	/* All paragraphs under maincontent */
-	color: rgba(146,146,146,1.00);
+	color: black;
 	font-family: source-sans-pro, sans-serif;
 	font-style: normal;
-	font-weight: 200;
 	text-align: justify;
 }
 #content #mainContent #authorInfo {
@@ -142,7 +147,7 @@ nav ul li a {
 	/* Footer bar at the bottom of the page */
 	height: 18px;
 	clear: both;
-	background-color: rgba(208,207,207,1.00);
+	background-color: #3fa375;
 	width: 100%;
 }
 footer {
